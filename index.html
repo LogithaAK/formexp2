@@ -1,0 +1,525 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CAREER QUEST - Registration Form</title>
+    <style>
+        body {
+            font-family: 'Comic Sans MS', sans-serif;
+            background-image: url("images.jpeg"); /* Add your motivational image */
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed; /* Keeps the background fixed while scrolling */
+            margin: 0;
+            padding: 0;
+            color: #333;
+        }
+        h2 {
+            text-align: center;
+            margin-top: 20px;
+            color: #6a1b9a;
+            font-family: 'Comic Sans MS', sans-serif;
+            font-size: 24px;
+        }
+        form {
+            width: 50%;
+            margin: 20px auto;
+            background: linear-gradient(145deg, #ffffff, #f3e5f5);
+            padding: 20px;
+            border-radius: 12px;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+            border: 2px solid #c2185b;
+        }
+        label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: bold;
+            color: #6a1b9a;
+        }
+        input[type="text"],
+        input[type="password"],
+        input[type="email"],
+        input[type="tel"],
+        textarea,
+        input[type="file"],
+        select,
+        input[type="date"] {
+            width: calc(100% - 24px); /* Adjust width to fit within the form */
+            padding: 8px; /* Reduced padding */
+            margin-bottom: 15px; /* Reduced margin */
+            border: 2px solid #c2185b;
+            border-radius: 6px; /* Reduced border-radius */
+            background-color: #fce4ec; /* Pastel pink */
+            font-size: 14px; /* Reduced font size */
+        }
+        .radio-group {
+            margin-bottom: 20px;
+        }
+        .radio-group label {
+            margin-right: 15px;
+            font-weight: normal;
+            color: #6a1b9a;
+        }
+        button {
+            width: 100%;
+            padding: 12px;
+            background-color: #ab47bc; /* Pastel violet */
+            color: #fff;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 16px;
+            font-family: 'Comic Sans MS', sans-serif;
+        }
+        button:hover {
+            background-color: #9c27b0; /* Darker shade of violet */
+        }
+        .error {
+            color: red;
+            display: none;
+        }
+        .error-show {
+            display: block;
+        }
+    </style>
+</head>
+<body>
+
+    <h2>  CAREER QUEST - Registration Form </h2>
+
+    <form id="CAREER QUEST - Registration Form" onsubmit="return validateForm()">
+        <label for="firstName">First Name:</label>
+        <input type="text" id="firstName" name="firstName" maxlength="20" required>
+
+        <label for="lastName">Last Name:</label>
+        <input type="text" id="lastName" name="lastName" maxlength="20" required>
+
+        <label for="dob">Date of Birth:</label>
+        <input type="date" id="dob" name="dob" required>
+        
+
+
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required>
+        <div id="emailError" class="error">Invalid email address.</div>
+
+        <label for="phone">Phone Number:</label>
+        <input type="tel" id="phone" name="phone" required>
+        <div id="phoneError" class="error">Phone number must be exactly 10 digits.</div>
+
+        <label for="country">Country:</label>
+        <select id="country" name="country" required>
+            <!-- Add all countries here -->
+            <option value="Afghanistan">Afghanistan</option>
+            <option value="Albania">Albania</option>
+            <option value="Algeria">Algeria</option>
+            <option value="Andorra">Andorra</option>
+            <option value="Angola">Angola</option>
+            <option value="Antigua and Barbuda">Antigua and Barbuda</option>
+            <option value="Argentina">Argentina</option>
+            <option value="Armenia">Armenia</option>
+            <option value="Australia">Australia</option>
+            <option value="Austria">Austria</option>
+            <option value="Azerbaijan">Azerbaijan</option>
+            <option value="Bahamas">Bahamas</option>
+            <option value="Bahrain">Bahrain</option>
+            <option value="Bangladesh">Bangladesh</option>
+            <option value="Barbados">Barbados</option>
+            <option value="Belarus">Belarus</option>
+            <option value="Belgium">Belgium</option>
+            <option value="Belize">Belize</option>
+            <option value="Benin">Benin</option>
+            <option value="Bhutan">Bhutan</option>
+            <option value="Bolivia">Bolivia</option>
+            <option value="Bosnia and Herzegovina">Bosnia and Herzegovina</option>
+            <option value="Botswana">Botswana</option>
+            <option value="Brazil">Brazil</option>
+            <option value="Brunei">Brunei</option>
+            <option value="Bulgaria">Bulgaria</option>
+            <option value="Burkina Faso">Burkina Faso</option>
+            <option value="Burundi">Burundi</option>
+            <option value="Cabo Verde">Cabo Verde</option>
+            <option value="Cambodia">Cambodia</option>
+            <option value="Cameroon">Cameroon</option>
+            <option value="Canada">Canada</option>
+            <option value="Central African Republic">Central African Republic</option>
+            <option value="Chad">Chad</option>
+            <option value="Chile">Chile</option>
+            <option value="China">China</option>
+            <option value="Colombia">Colombia</option>
+            <option value="Comoros">Comoros</option>
+            <option value="Congo (Congo-Brazzaville)">Congo (Congo-Brazzaville)</option>
+            <option value="Congo (Congo-Kinshasa)">Congo (Congo-Kinshasa)</option>
+            <option value="Costa Rica">Costa Rica</option>
+            <option value="Croatia">Croatia</option>
+            <option value="Cuba">Cuba</option>
+            <option value="Cyprus">Cyprus</option>
+            <option value="Czech Republic">Czech Republic</option>
+            <option value="Denmark">Denmark</option>
+            <option value="Djibouti">Djibouti</option>
+            <option value="Dominica">Dominica</option>
+            <option value="Dominican Republic">Dominican Republic</option>
+            <option value="Ecuador">Ecuador</option>
+            <option value="Egypt">Egypt</option>
+            <option value="El Salvador">El Salvador</option>
+            <option value="Equatorial Guinea">Equatorial Guinea</option>
+            <option value="Eritrea">Eritrea</option>
+            <option value="Estonia">Estonia</option>
+            <option value="Eswatini">Eswatini</option>
+            <option value="Ethiopia">Ethiopia</option>
+            <option value="Fiji">Fiji</option>
+            <option value="Finland">Finland</option>
+            <option value="France">France</option>
+            <option value="Gabon">Gabon</option>
+            <option value="Gambia">Gambia</option>
+            <option value="Georgia">Georgia</option>
+            <option value="Germany">Germany</option>
+            <option value="Ghana">Ghana</option>
+            <option value="Greece">Greece</option>
+            <option value="Grenada">Grenada</option>
+            <option value="Guatemala">Guatemala</option>
+            <option value="Guinea">Guinea</option>
+            <option value="Guinea-Bissau">Guinea-Bissau</option>
+            <option value="Guyana">Guyana</option>
+            <option value="Haiti">Haiti</option>
+            <option value="Honduras">Honduras</option>
+            <option value="Hungary">Hungary</option>
+            <option value="Iceland">Iceland</option>
+            <option value="India">India</option>
+            <option value="Indonesia">Indonesia</option>
+            <option value="Iran">Iran</option>
+            <option value="Iraq">Iraq</option>
+            <option value="Ireland">Ireland</option>
+            <option value="Israel">Israel</option>
+            <option value="Italy">Italy</option>
+            <option value="Jamaica">Jamaica</option>
+            <option value="Japan">Japan</option>
+            <option value="Jordan">Jordan</option>
+            <option value="Kazakhstan">Kazakhstan</option>
+            <option value="Kenya">Kenya</option>
+            <option value="Kiribati">Kiribati</option>
+            <option value="Kosovo">Kosovo</option>
+            <option value="Kuwait">Kuwait</option>
+            <option value="Kyrgyzstan">Kyrgyzstan</option>
+            <option value="Laos">Laos</option>
+            <option value="Latvia">Latvia</option>
+            <option value="Lebanon">Lebanon</option>
+            <option value="Lesotho">Lesotho</option>
+            <option value="Liberia">Liberia</option>
+            <option value="Libya">Libya</option>
+            <option value="Liechtenstein">Liechtenstein</option>
+            <option value="Lithuania">Lithuania</option>
+            <option value="Luxembourg">Luxembourg</option>
+            <option value="Madagascar">Madagascar</option>
+            <option value="Malawi">Malawi</option>
+            <option value="Malaysia">Malaysia</option>
+            <option value="Maldives">Maldives</option>
+            <option value="Mali">Mali</option>
+            <option value="Malta">Malta</option>
+            <option value="Marshall Islands">Marshall Islands</option>
+            <option value="Mauritania">Mauritania</option>
+            <option value="Mauritius">Mauritius</option>
+            <option value="Mexico">Mexico</option>
+            <option value="Micronesia">Micronesia</option>
+            <option value="Moldova">Moldova</option>
+            <option value="Monaco">Monaco</option>
+            <option value="Mongolia">Mongolia</option>
+            <option value="Montenegro">Montenegro</option>
+            <option value="Morocco">Morocco</option>
+            <option value="Mozambique">Mozambique</option>
+            <option value="Myanmar">Myanmar</option>
+            <option value="Namibia">Namibia</option>
+            <option value="Nauru">Nauru</option>
+            <option value="Nepal">Nepal</option>
+            <option value="Netherlands">Netherlands</option>
+            <option value="New Zealand">New Zealand</option>
+            <option value="Nicaragua">Nicaragua</option>
+            <option value="Niger">Niger</option>
+            <option value="Nigeria">Nigeria</option>
+            <option value="North Korea">North Korea</option>
+            <option value="North Macedonia">North Macedonia</option>
+            <option value="Norway">Norway</option>
+            <option value="Oman">Oman</option>
+            <option value="Pakistan">Pakistan</option>
+            <option value="Palau">Palau</option>
+            <option value="Palestine">Palestine</option>
+            <option value="Panama">Panama</option>
+            <option value="Papua New Guinea">Papua New Guinea</option>
+            <option value="Paraguay">Paraguay</option>
+            <option value="Peru">Peru</option>
+            <option value="Philippines">Philippines</option>
+            <option value="Poland">Poland</option>
+            <option value="Portugal">Portugal</option>
+            <option value="Qatar">Qatar</option>
+            <option value="Romania">Romania</option>
+            <option value="Russia">Russia</option>
+            <option value="Rwanda">Rwanda</option>
+            <option value="Saint Kitts and Nevis">Saint Kitts and Nevis</option>
+            <option value="Saint Lucia">Saint Lucia</option>
+            <option value="Saint Vincent and the Grenadines">Saint Vincent and the Grenadines</option>
+            <option value="Samoa">Samoa</option>
+            <option value="San Marino">San Marino</option>
+            <option value="Sao Tome and Principe">Sao Tome and Principe</option>
+            <option value="Saudi Arabia">Saudi Arabia</option>
+            <option value="Senegal">Senegal</option>
+            <option value="Serbia">Serbia</option>
+            <option value="Seychelles">Seychelles</option>
+            <option value="Sierra Leone">Sierra Leone</option>
+            <option value="Singapore">Singapore</option>
+            <option value="Slovakia">Slovakia</option>
+            <option value="Slovenia">Slovenia</option>
+            <option value="Solomon Islands">Solomon Islands</option>
+            <option value="Somalia">Somalia</option>
+            <option value="South Africa">South Africa</option>
+            <option value="South Korea">South Korea</option>
+            <option value="South Sudan">South Sudan</option>
+            <option value="Spain">Spain</option>
+            <option value="Sri Lanka">Sri Lanka</option>
+            <option value="Sudan">Sudan</option>
+            <option value="Suriname">Suriname</option>
+            <option value="Sweden">Sweden</option>
+            <option value="Switzerland">Switzerland</option>
+            <option value="Syria">Syria</option>
+            <option value="Taiwan">Taiwan</option>
+            <option value="Tajikistan">Tajikistan</option>
+            <option value="Tanzania">Tanzania</option>
+            <option value="Thailand">Thailand</option>
+            <option value="Timor-Leste">Timor-Leste</option>
+            <option value="Togo">Togo</option>
+            <option value="Tonga">Tonga</option>
+            <option value="Trinidad and Tobago">Trinidad and Tobago</option>
+            <option value="Tunisia">Tunisia</option>
+            <option value="Turkey">Turkey</option>
+            <option value="Turkmenistan">Turkmenistan</option>
+            <option value="Tuvalu">Tuvalu</option>
+            <option value="Uganda">Uganda</option>
+            <option value="Ukraine">Ukraine</option>
+            <option value="United Arab Emirates">United Arab Emirates</option>
+            <option value="United Kingdom">United Kingdom</option>
+            <option value="United States">United States</option>
+            <option value="Uruguay">Uruguay</option>
+            <option value="Uzbekistan">Uzbekistan</option>
+            <option value="Vanuatu">Vanuatu</option>
+            <option value="Vatican City">Vatican City</option>
+            <option value="Venezuela">Venezuela</option>
+            <option value="Vietnam">Vietnam</option>
+            <option value="Yemen">Yemen</option>
+            <option value="Zambia">Zambia</option>
+            <option value="Zimbabwe">Zimbabwe</option>
+        </select>
+        
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password" required>
+        <div id="passwordErrors">
+            <div id="uppercaseError" class="error">Uppercase letter required.</div>
+            <div id="lowercaseError" class="error">Lowercase letter required.</div>
+            <div id="numberError" class="error">Number required.</div>
+            <div id="specialCharError" class="error">Special character required.</div>
+            <div id="lengthError" class="error">Password must be at least 8 characters long.</div>
+        </div>
+
+        <label for="confirmPassword">Confirm Password:</label>
+        <input type="password" id="confirmPassword" name="confirmPassword" required>
+        <div id="confirmPasswordError" class="error">Passwords do not match.</div>
+        <form id="examForm">
+            <!-- Domain Selection -->
+<label for="domain">Domain:</label>
+<select id="domain" name="domain" required onchange="updateSubdomains()">
+    <option value="">Select a domain</option>
+    <option value="Central Government Exams">Central Government Exams</option>
+    <option value="State Government Exams">State Government Exams</option>
+    <option value="Bank Exams">Bank Exams</option>
+    <option value="Railway Exams">Railway Exams</option>
+    <option value="Defense Exams">Defense Exams</option>
+    <option value="Teaching Exams">Teaching Exams</option>
+    <option value="Others">Others</option>
+</select>
+
+<!-- Subdomain Selection -->
+<label for="subdomain">Subdomains:</label>
+<select id="subdomain" name="subdomain[]" multiple required>
+    <!-- Options will be populated dynamically -->
+</select>
+
+<div id="subdomainError" class="error-message" style="color:red; display:none;">Please select both a domain and a subdomain.</div>
+
+<script>
+    const subdomainOptions = {
+        "Central Government Exams": [
+            "UPSC IAS/IPS/IFS", "UPSC IFS", "UPSC IPS", "UPSC IRS", "SSC CGL", 
+            "SSC CHSL", "SSC JE", "RBI Grade B Officer", "RBI Assistant", "IBPS PO", 
+            "IBPS Clerk", "IBPS SO", "NABARD Grade A", "NABARD Grade B", "DRDO Scientist", 
+            "ISRO Scientist", "ECIL Technical Officer"
+        ],
+        "State Government Exams": [
+            "TNPSC Group I", "TNPSC Group II", "TNPSC Group IV", "UPPSC PCS", 
+            "UPPSC RO", "MPSC State Services Exam", "MPSC Police Sub Inspector", 
+            "KPSC KAS", "BPSC Bihar PCS", "RPSC Rajasthan Police", 
+            "WBPSC West Bengal PCS", "MPPSC Madhya Pradesh PCS", "APPSC Andhra Pradesh PSC"
+        ],
+        "Bank Exams": [
+            "IBPS PO", "IBPS Clerk", "IBPS SO", "SBI PO", "SBI Clerk", "SBI SO", 
+            "RBI Grade B Officer", "RBI Assistant", "NABARD Grade A", "NABARD Grade B", 
+            "IBPS RRB PO", "IBPS RRB Clerk"
+        ],
+        "Railway Exams": [
+            "RRB NTPC", "RRB JE", "RRB Group D", "RRB ALP", "RRB Staff Nurse"
+        ],
+        "Defense Exams": [
+            "UPSC NDA", "UPSC CDS", "Army Soldier Recruitment", "Navy AA", "Navy SSR", 
+            "Air Force Group X", "Air Force Group Y", "CRPF Constable", 
+            "BSF Head Constable", "ITBP Sub Inspector"
+        ],
+        "Teaching Exams": [
+            "CTET", "State TET (e.g., UPTET, AP TET)", "UGC NET", "JRF", "SLET", 
+            "KVS PRT", "KVS TGT", "KVS PGT"
+        ],
+        "Others": [
+            "Civil Services Exam", "Judicial Services Exam", "Architectural Services Exam", 
+            "Geologist Services Exam"
+        ]
+    };
+
+    function updateSubdomains() {
+        const domainSelect = document.getElementById('domain');
+        const subdomainSelect = document.getElementById('subdomain');
+        const subdomainError = document.getElementById('subdomainError');
+
+        // Clear existing options
+        subdomainSelect.innerHTML = '';
+        
+        const selectedDomain = domainSelect.value;
+        
+        if (selectedDomain && subdomainOptions[selectedDomain]) {
+            // Populate subdomains based on the selected domain
+            subdomainOptions[selectedDomain].forEach(subdomain => {
+                const option = document.createElement('option');
+                option.value = subdomain;
+                option.textContent = subdomain;
+                subdomainSelect.appendChild(option);
+            });
+            
+            subdomainError.style.display = 'none';
+        } else {
+            // Clear subdomains if no domain is selected
+            subdomainError.style.display = 'block';
+        }
+    }
+    function validateForm() {
+        const domain = document.getElementById("domain").value;
+        const subdomain = document.getElementById("subdomain").selectedOptions.length > 0;
+        const name = document.getElementById("name").value.trim();
+        const email = document.getElementById("email").value.trim();
+        const phone = document.getElementById("phone").value.trim();
+        const dob = document.getElementById("dob").value;
+        const gender = document.querySelector('input[name="gender"]:checked');
+
+        // Check for empty fields
+        if (!name || !email || !phone || !dob || !gender) {
+            alert("Please fill out all required fields.");
+            return false;
+        }
+
+        // Check for domain and subdomain selection
+        if (domain && !subdomain) {
+            document.getElementById("subdomainError").style.display = "block";
+            return false;
+        } else {
+            document.getElementById("subdomainError").style.display = "none";
+        }
+
+        return true;
+    }
+
+</script>
+
+<label for="Personal Overview">Personal Overview:</label>
+<textarea id="Personal Overview" name="Personal Overview" rows="4" cols="50" required></textarea>
+
+        <label for="upload id proof">upload id proof:</label>
+        <input type="file" id="resume" name="resume" accept=".pdf,.doc,.docx" required>
+
+        <label for="gender">Gender:</label>
+<select id="gender" name="gender" required>
+    <option value="" disabled selected>Select your gender</option>
+    <option value="male">Male</option>
+    <option value="female">Female</option>
+    <option value="other">Other</option>
+</select>
+
+
+<!-- Assurance Checkbox -->
+<div class="checkbox-group">
+    <input type="checkbox" id="confirmation" name="confirmation" required>
+    <label for="confirmation">All information provided is true to the best of my knowledge.</label>
+</div>
+        <button type="submit">Register</button>
+    </form>
+
+    <script>
+        function validatePassword() {
+            const password = document.getElementById("password").value;
+            const confirmPassword = document.getElementById("confirmPassword").value;
+
+            // Regular expressions for password validation
+            const uppercaseRegex = /[A-Z]/;
+            const lowercaseRegex = /[a-z]/;
+            const numberRegex = /\d/;
+            const specialCharRegex = /[!@#$%^&*]/;
+            const lengthRegex = /.{8,}/;
+
+            // Check password criteria
+            const hasUppercase = uppercaseRegex.test(password);
+            const hasLowercase = lowercaseRegex.test(password);
+            const hasNumber = numberRegex.test(password);
+            const hasSpecialChar = specialCharRegex.test(password);
+            const isLongEnough = lengthRegex.test(password);
+
+            // Show/hide error messages
+            document.getElementById("uppercaseError").classList.toggle("error-show", !hasUppercase);
+            document.getElementById("lowercaseError").classList.toggle("error-show", !hasLowercase);
+            document.getElementById("numberError").classList.toggle("error-show", !hasNumber);
+            document.getElementById("specialCharError").classList.toggle("error-show", !hasSpecialChar);
+            document.getElementById("lengthError").classList.toggle("error-show", !isLongEnough);
+
+            // Check confirm password
+            const passwordsMatch = password === confirmPassword;
+            document.getElementById("confirmPasswordError").classList.toggle("error-show", !passwordsMatch);
+
+            return hasUppercase && hasLowercase && hasNumber && hasSpecialChar && isLongEnough && passwordsMatch;
+        }
+
+        function validateEmail() {
+            const email = document.getElementById("email").value;
+            const emailPattern = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,6}$/;
+            const isValidEmail = emailPattern.test(email);
+            document.getElementById("emailError").classList.toggle("error-show", !isValidEmail);
+            return isValidEmail;
+        }
+
+        function validatePhone() {
+            const phone = document.getElementById("phone").value;
+            const phonePattern = /^\d{10}$/;
+            const isValidPhone = phonePattern.test(phone);
+            document.getElementById("phoneError").classList.toggle("error-show", !isValidPhone);
+            return isValidPhone;
+        }
+
+        function validateForm() {
+            const isPasswordValid = validatePassword();
+            const isEmailValid = validateEmail();
+            const isPhoneValid = validatePhone();
+            return isPasswordValid && isEmailValid && isPhoneValid;
+        }
+
+        // Attach event listeners for real-time feedback
+        document.getElementById("password").addEventListener("input", validatePassword);
+        document.getElementById("confirmPassword").addEventListener("input", validatePassword);
+        document.getElementById("email").addEventListener("input", validateEmail);
+        document.getElementById("phone").addEventListener("input", validatePhone);
+  
+    
+    </script>
+</body>
+</html>
